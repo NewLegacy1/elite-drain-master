@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Industrial Premium Dark Theme */
+    --background: 220 20% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Electric Blue - Primary Action Color */
+    --primary: 205 100% 50%;
+    --primary-foreground: 220 20% 6%;
+
+    /* Steel Gray - Secondary */
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 0 0% 90%;
+
+    /* Muted surfaces */
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 60%;
+
+    /* Accent - Brighter Blue for highlights */
+    --accent: 205 100% 60%;
+    --accent-foreground: 220 20% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 18%;
+    --ring: 205 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom design tokens */
+    --charcoal-deep: 220 20% 4%;
+    --charcoal: 220 20% 8%;
+    --charcoal-light: 220 18% 12%;
+    --steel: 220 10% 25%;
+    --steel-light: 220 10% 40%;
+    --electric-blue: 205 100% 50%;
+    --electric-blue-glow: 205 100% 60%;
+    --white-pure: 0 0% 100%;
+    --white-soft: 0 0% 95%;
+
+    /* Gradients */
+    --gradient-electric: linear-gradient(135deg, hsl(205 100% 50%) 0%, hsl(195 100% 45%) 100%);
+    --gradient-charcoal: linear-gradient(180deg, hsl(220 20% 8%) 0%, hsl(220 20% 4%) 100%);
+    --gradient-steel: linear-gradient(135deg, hsl(220 15% 15%) 0%, hsl(220 15% 10%) 100%);
+    --gradient-hero: radial-gradient(ellipse at 50% 0%, hsl(205 100% 50% / 0.15) 0%, transparent 60%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(205 100% 50% / 0.3);
+    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.4);
+    --shadow-button: 0 4px 16px hsl(205 100% 50% / 0.3);
+
+    /* Sidebar */
+    --sidebar-background: 220 20% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 205 100% 50%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 205 100% 50%;
+  }
+
+  .dark {
+    /* Already dark theme by default */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .text-gradient-electric {
+    background: linear-gradient(135deg, hsl(205 100% 50%) 0%, hsl(195 100% 60%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-electric {
+    background: linear-gradient(135deg, hsl(205 100% 50%) 0%, hsl(195 100% 45%) 100%);
+  }
+
+  .bg-gradient-charcoal {
+    background: linear-gradient(180deg, hsl(220 20% 8%) 0%, hsl(220 20% 4%) 100%);
+  }
+
+  .bg-hero-glow {
+    background: radial-gradient(ellipse at 50% 0%, hsl(205 100% 50% / 0.12) 0%, transparent 60%);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 40px hsl(205 100% 50% / 0.3);
+  }
+
+  .shadow-glow-sm {
+    box-shadow: 0 0 20px hsl(205 100% 50% / 0.2);
+  }
+
+  .border-glow {
+    border-color: hsl(205 100% 50% / 0.3);
+  }
+
+  /* Industrial texture overlay */
+  .texture-industrial {
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(205 100% 50% / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(205 100% 50% / 0.03) 0%, transparent 50%);
+  }
+
+  /* Grid pattern for industrial feel */
+  .pattern-grid {
+    background-image: 
+      linear-gradient(hsl(220 15% 15% / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 15% 15% / 0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Bento card styles */
+  .bento-card {
+    @apply relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300;
+  }
+
+  .bento-card:hover {
+    @apply border-primary/30;
+    box-shadow: 0 0 30px hsl(205 100% 50% / 0.1);
+  }
+}
+
+@layer utilities {
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px hsl(205 100% 50% / 0.3);
+    }
+    to {
+      box-shadow: 0 0 40px hsl(205 100% 50% / 0.5);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
