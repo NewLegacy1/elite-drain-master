@@ -11,7 +11,7 @@ const FeaturesSection = () => {
     {
       icon: Wrench,
       title: "Specialized Equipment",
-      description: "Professional-grade drain snakes, HD inspection cameras, and high-pressure jetters. Tools purpose-built for drain mastery."
+      description: "Professional-grade drain snakes and HD inspection cameras. Tools purpose-built for drain mastery."
     }
   ];
 
