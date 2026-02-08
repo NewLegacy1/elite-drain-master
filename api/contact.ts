@@ -72,7 +72,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     const resend = new Resend(resendKey);
-    const fromEmail = process.env.RESEND_FROM || "onboarding@resend.dev";
+    const fromEmail = process.env.RESEND_FROM || "noreply@contact.newlegacyai.ca";
 
     const { error: emailError } = await resend.emails.send({
       from: fromEmail,
