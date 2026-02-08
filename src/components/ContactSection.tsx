@@ -43,15 +43,24 @@ const ContactSection = () => {
 
     try {
       const validatedData = contactSchema.parse(formData);
-      
-      // Simulate form submission (integrate with your email service)
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(validatedData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
       toast({
         title: "Message Sent!",
         description: "Thanks for reaching out. Jay will get back to you soon.",
       });
-      
+
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -65,8 +74,8 @@ const ContactSection = () => {
       } else {
         toast({
           title: "Error",
-          description: "Something went wrong. Please try again or call us directly.",
-          variant: "destructive"
+          description: error instanceof Error ? error.message : "Something went wrong. Please try again or call us directly.",
+          variant: "destructive",
         });
       }
     } finally {
