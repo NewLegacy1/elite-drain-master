@@ -139,7 +139,7 @@ const Index = () => {
         <meta property="og:site_name" content="Jay That Drain Guy" />
         <meta property="og:title" content="Jay That Drain Guy | 5.0★ (96 Reviews) | Expert Drain Clearing Hamilton & GTA" />
         <meta property="og:description" content="★★★★★ Rated 5.0/5.0 by 96+ customers! 19 years clearing drains in Hamilton, Burlington, Toronto & GTA. 24/7 emergency service. Call 289-242-4876." />
-        <meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
+        <meta property="og:image" content={`${siteUrl}/og-image.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="en_CA" />
@@ -149,7 +149,7 @@ const Index = () => {
         <meta name="twitter:site" content="@jaythatdrainguy" />
         <meta name="twitter:title" content="Jay That Drain Guy | Expert Drain Clearing Hamilton & GTA" />
         <meta name="twitter:description" content="19 years clearing drains in Hamilton, Burlington, Toronto & GTA. 24/7 emergency service. Call 289-242-4876." />
-        <meta name="twitter:image" content={`${siteUrl}/og-image.jpg`} />
+        <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
         
         {/* Geo tags for local SEO */}
         <meta name="geo.region" content="CA-ON" />
